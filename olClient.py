@@ -31,7 +31,7 @@ if choice == 1:
 	if len(sys.argv) == 3:
 		latitude = sys.argv[1]
 		longitude = sys.argv[2]
-	else
+	else:
 		print("latitude: ",end="")
 		server_host = sys.stdin
 		print("longitude: ",end="")
@@ -39,8 +39,8 @@ if choice == 1:
 		
 		sendMessage(sock,latitude,longitude)
 #if user wants coordinates to be auto generated
-else
-	for num in range(1,10)
+else:
+	for num in range(10):
 		input("Press Enter to generate coordinates")	#waits for user to continue so they can see overlay movement
 		latitude = random.randint(-90,90)
 		longitude = random.randint(-180,180)
