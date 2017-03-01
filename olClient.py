@@ -8,8 +8,8 @@ import fileinput
 import random
 
 #set server host and port number
-server_host = "127.0.0.1";
-server_port = 3001;
+server_host = "127.0.0.1"
+server_port = 3001
 
 #arrange coordinates into proper format then send to server
 def sendMessage(sock,latitude, longitude):
@@ -21,16 +21,16 @@ sock = socket.socket(sock.AF_INET,socket.SOCK_STREAM)
 sock.connect((server_host,server_port))
 
 #asks user if they'd like to manually enter coordinates or autorun
-print("Choose from the following options:");
-print("1) Manually enter coordinates");
-print("2) Run simulation");
+print("Choose from the following options:")
+print("1) Manually enter coordinates")
+print("2) Run simulation")
 choice = sys.stdin
 
 #if user wants to enter coordinates
 if choice == 1:
-	if len(sys.argv) == 3):
-		latitude = sys.argv[1];
-		longitude = sys.argv[2];
+	if len(sys.argv) == 3:
+		latitude = sys.argv[1]
+		longitude = sys.argv[2]
 	else
 		print("latitude: ",end="")
 		server_host = sys.stdin
