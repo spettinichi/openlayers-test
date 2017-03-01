@@ -1,8 +1,6 @@
 var ol = require('openlayers');
 var net = require('net');
-var HOST = 'pettinichi.com/openlayers-test/';
 var PORT = 3001;
-
 
 var latitude = 39.772954;
 var longitude = -84.065299;
@@ -29,4 +27,17 @@ starship.setPosition([latitude, longitude]);
 map.on('click', function(event){
 	var coords = event.coordinate;
 	starship.setPosition(coords);
+});
+
+var server = net.createServer();
+server.listen(PORT); //listen on any hostname
+console.log('Server listening on ' + server.address().address +':'+ server.address().port);
+server.on('connection',function(sock){
+	console.log('connected: ' + sock.remoteAddress + ':' + sock.remotePort);
+	sock.on('data',function(data){
+		starship.setPosition(data);
+	});
+	sock.on('close',function(data){
+		console.log('closed: ' + sock.remoteAddress + ':' + sock.remotePort);
+	});
 });
