@@ -17,7 +17,7 @@ def sendMessage(sock,latitude, longitude):
 	sock.sendall(coords)
 
 #set up socket to connect to designated host
-sock = socket.socket(sock.AF_INET,socket.SOCK_STREAM)
+sock = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
 sock.connect((server_host,server_port))
 
 #asks user if they'd like to manually enter coordinates or autorun
@@ -46,5 +46,5 @@ else:
 		longitude = random.randint(-180,180)
 		sendMessage(sock,latitude,longitude)
 
-sock.shutdown*(socket.SHUT_RDWR)
+sock.shutdown(socket.SHUT_RDWR)
 sock.close()

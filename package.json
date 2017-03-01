@@ -20,6 +20,9 @@
   "homepage": "https://github.com/xeratun/openlayers-test#readme",
   "devDependencies": {
     "browserify": "^14.1.0",
+    "express": "^4.14.1",
+    "net": "^1.0.2",
+    "net-browserify": "^0.2.4",
     "openlayers": "^4.0.1",
     "uglify-js": "^2.8.1",
     "watchify": "^3.9.0"
