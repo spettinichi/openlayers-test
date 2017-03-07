@@ -5,7 +5,7 @@
 	<style>
 		.map {
 			position: relative;
-			height: 400px;
+			height: 500px;
 			width: 100%;
 		}
 		.starship {
@@ -60,10 +60,10 @@
 			var obj = JSON.parse(json_string);
 			var latitude = parseInt(obj.latitude);
 			var longitude = parseInt(obj.longitude);
-			var coords = [latitude,longitude];
-			console.log(coords);
-			starship.setPosition(coords);
-			starship.setPosition(event.data);
+			var coords = [longitude,latitude];
+			var newCoords = ol.proj.transform(coords, 'EPSG:4326', 'EPSG:3857');
+			console.log(newCoords);
+			starship.setPosition(newCoords);
 		};
 	</script>
 </body>
