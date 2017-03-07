@@ -47,7 +47,7 @@
 			console.log(coords);
 			starship.setPosition(coords);
 		});
-		var ws = new WebSocket('wss://vps80361.vps.ovh.ca:8080/');
+		var ws = new WebSocket('ws://vps80361.vps.ovh.ca:8080/');
 		ws.onopen = function() {
 			console.log("Connected");
 		};
