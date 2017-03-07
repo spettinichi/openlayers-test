@@ -11,4 +11,4 @@
 #	longitude=$(( $longitude + 10 ))
 #done
 
-python3 test.py
+python3 index.py
